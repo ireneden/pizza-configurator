@@ -1,7 +1,8 @@
-// import reducer from './reducer'
+// import chosenOption from './chosenOption'
+// import price from './price'
 //
-// //content
 //
 // export default {
-// reducer,
+// chosenOption,
+// price,
 // }

@@ -1,28 +1,37 @@
 .App {
   text-align: center;
+  margin-right: 2%;
+  margin-top: 5%;
+}
+.title {
+  margin-right: 7%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App-page {
+  background-color: #fff;
+  background:rgba(255,255,255,0.65);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.title {
+  color: #fff;
+  font-size: 50px;
+  text-decoration: underline;
 }
 
-.App-title {
-  font-size: 1.5em;
+form {
+  margin-top: 2%;
 }
 
-.App-intro {
-  font-size: large;
+form label {
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+form input {
+  margin-left: 10px;
+  width: 100px;
+  height: 60px;
 }
