@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
+import { ingredientsOptions }  from '../ingredientsList'
+
 
 
 export class Base extends React.Component {
@@ -11,15 +13,18 @@ export class Base extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // name(option){
-  //      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
-  //    }
-
   handleChange(event) {
     this.setState({value: event.target.value});
     this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
-  }
 
+    let foundIngredient = false;
+    for(var i = 0; i < ingredientsOptions.length; i++) {
+        if (ingredientsOptions[i].name === event.target.value) {
+            foundIngredient = true;
+            return alert(ingredientsOptions[i].price)
+            break;
+        }
+    }}
 
   render() {
     return (
