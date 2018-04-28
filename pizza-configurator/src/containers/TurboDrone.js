@@ -6,31 +6,29 @@ import '../App.css'
 export class TurboDrone extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {value:true};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
-  handleSubmit(event) {
-    // alert('Your favorite flavor is: ' + this.state.value);
-    event.preventDefault();
+    this.setState({
+      [value]: value
+    });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <label>
           Superhangry? Have your pizza delivered turboquickly with our drone!
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option type="TurboDrone" value="{}" >Add Turbo Drone delivery!</option>
-          </select>
+            <option value="TurboDrone">Add Turbo Drone delivery!</option>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="checkbox" checked={this.state.value} value="Checkbox" onChange={this.handleInputChange} className="turbodrone-toggle"/>
       </form>
     );
   }
@@ -39,7 +37,7 @@ export class TurboDrone extends React.Component {
 const mapStateToProps = (reduxState) => {
   return {
     price: reduxState.price,
-    chosenOption: reduxState.chosenOption
+    name: reduxState.name
   }
 }
 

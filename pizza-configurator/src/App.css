@@ -2,36 +2,79 @@
   text-align: center;
   margin-right: 2%;
   margin-top: 5%;
-}
-.title {
-  margin-right: 7%;
+  font-family: Trebuchet;
 }
 
 .App-page {
   background-color: #fff;
-  background:rgba(255,255,255,0.65);
+  background:rgba(255,255,255,0.60);
   padding-top: 2%;
-  padding-bottom: 2%;
-  margin-left: 4%;
-  margin-right: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 10px;
 }
 
 .title {
   color: #fff;
-  font-size: 50px;
+  font-size: 60px;
   text-decoration: underline;
+  margin-right: 7%;
+  font-family: Courier, Arial, sans-serif;
+}
+
+.App-title {
+  font-family: Trebuchet, Arial, sans-serif;
 }
 
 form {
   margin-top: 2%;
+  font-family: Trebuchet, Arial, sans-serif;
 }
 
 form label {
-  font-size: 20px;
+  font-size: 19px;
 }
 
-form input {
+form input  {
   margin-left: 10px;
   width: 100px;
-  height: 60px;
+  height: 10%;
+  font-family: Courier;
+  /* padding-bottom: */
+}
+
+form select {
+  font-family: Courier;
+  padding-top: 10px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.PriceCalculator {
+  margin-top: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 4%;
+  text-decoration: underline;
+}
+
+.Turbodrone-p {
+  margin-top: 3%;
+  padding: 3%;
+  border-radius: 10px;
+  background:rgba(255,255,255,0.6);
+  font-size: 25px;
+  font-family: Courier, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.submitButton {
+  margin-top: 40px;
+}
+
+.turbodrone-toggle {
+  width: 50px;
+  height: 40px;
 }

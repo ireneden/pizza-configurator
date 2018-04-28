@@ -8,21 +8,47 @@ import PriceCalculator from '../containers/PriceCalculator'
 import {newChoice} from '../actions/choice'
 import '../App.css'
 
+
 class Page extends Component {
     newChoice = (choice) => {
     this.props.newChoice(choice)
   }
+
+
+
+
+ name(option){
+      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
+    }
+
+    // handleSubmit(event) {
+    //        event.preventDefault()
+    //        this.name(this.state.value)
+    //        event.preventDefault();
+    //      }
+ // handleChange(event) {
+ //        event.preventDefault()
+ //        this.name(this.state.value)
+ //        event.preventDefault();
+ //      }
 
   render() {
     return (
         <div className="App-page">
           <h1 className="App-title">Welcome to the pizza configurator!</h1>
             <div className = "Pizza-configurator">
-              <Base className="Base" onSubmit={this.newChoice} />
-              <Sauce className="Sauce" onSubmit={this.newChoice} />
-              <Toppings className="Toppings" onSubmit={this.newChoice} />
-              <TurboDrone className="Turbodrone" onSubmit={this.newChoice} />
+            <form onSubmit={this.handleSubmit}>
+              <Base className="Base" />
+              <Sauce className="Sauce" />
+              <h4>Now select up to 3 toppings!</h4>
+              <Toppings className="Toppings1" />
+              <Toppings className="Toppings2" />
+              <Toppings className="Toppings3" />
+              <input type="submit" value="Submit" className="submitButton"/>
               <PriceCalculator />
+              <TurboDrone className="Turbodrone" onSubmit={this.newChoice} />
+              <p className="Turbodrone-p">Your Final Price is: (price including 10% turbodrone)</p>
+              </form>
             </div>
         </div>
     )
@@ -31,7 +57,7 @@ class Page extends Component {
 
 const mapStateToProps = function (state) {
 	return {
-	  chosenOption: state.chosenOption,
+	  name: state.name,
     price: state.price
 	}
 }

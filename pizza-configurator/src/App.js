@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App-title">
-        <h1 className="title">Hangry? <span role="img" aria-label="emoji" >😡 😋 </span></h1>
+        <h1 className="title">Hangry?<span role="img" aria-label="emoji" > 🤤😡</span></h1>
           <Page />
       </div>
     )

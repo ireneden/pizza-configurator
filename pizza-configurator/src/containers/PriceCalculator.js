@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+// import Base from './Base.js'
 import '../App.css'
 
 
@@ -9,7 +10,7 @@ export class PriceCalculator extends PureComponent {
   render() {
     return (
       <div className="PriceCalculator">
-        <h2>Your total price: </h2>
+        <h3>Total price (excluding delivery options): </h3>
         <h2>{this.props.price}</h2>
       </div>
     )

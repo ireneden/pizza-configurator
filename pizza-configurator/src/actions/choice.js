@@ -1,8 +1,9 @@
 export const NEW_CHOICE = 'NEW_CHOICE'
 
-export const newChoice = (choice) => {
+export const newChoice = (name, price) => {
   return {
       type: NEW_CHOICE,
-      // payload: price,
-      // chosenOption
+      payload: {
+        name: name,
+        price: price}
   }}
