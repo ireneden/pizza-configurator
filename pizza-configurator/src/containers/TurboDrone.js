@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Toggle from 'react-toggle'
 import '../App.css'
 
 
@@ -13,22 +14,22 @@ export class TurboDrone extends React.Component {
   }
 
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    // const target = event.target;
+    // const togglevalue = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({value: event.target.value});
+    this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
+    }
 
-    this.setState({
-      [value]: value
-    });
-  }
 
   render() {
     return (
       <form>
         <label>
-          Superhangry? Have your pizza delivered turboquickly with our drone!
-            <option value="TurboDrone">Add Turbo Drone delivery!</option>
+          <b>Superhangry?</b> Have your pizza delivered turboquickly with our drone!
+            <option value="TurboDrone" className="turbodrone-label">Add Turbo Drone delivery</option>
         </label>
-        <input type="checkbox" checked={this.state.value} value="Checkbox" onChange={this.handleInputChange} className="turbodrone-toggle"/>
+        <Toggle
+          defaultChecked={this.state.value} value="TurboDrone" onChange={this.handleInputChange}/>
       </form>
     );
   }

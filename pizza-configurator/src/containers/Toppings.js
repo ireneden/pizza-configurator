@@ -6,7 +6,7 @@ import '../App.css'
 export class Toppings extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: '', price: ''}
+    this.state = {value: ''}
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -15,14 +15,10 @@ export class Toppings extends React.Component {
        this.props.dispatch({type:"NEW_CHOICE", payload: this.state})
      }
 
-  price(cost){
-       this.props.dispatch({type:"NEW_CHOICE", payload: this.state})
+     handleChange(event) {
+       this.setState({value: event.target.value});
+       this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
      }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-    this.setState({price: event.target.price});
-  }
 
 
   render() {

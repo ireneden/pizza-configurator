@@ -12,25 +12,19 @@ import '../App.css'
 class Page extends Component {
     newChoice = (choice) => {
     this.props.newChoice(choice)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
-
-
- name(option){
-      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
-    }
+ // name(option){
+ //      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
+ //    }
 
     // handleSubmit(event) {
     //        event.preventDefault()
-    //        this.name(this.state.value)
+    //        this.value(this.props.value)
     //        event.preventDefault();
     //      }
- // handleChange(event) {
- //        event.preventDefault()
- //        this.name(this.state.value)
- //        event.preventDefault();
- //      }
+
 
   render() {
     return (

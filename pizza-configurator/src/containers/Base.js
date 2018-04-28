@@ -1,22 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
-// import {baseOptions} from '../ingredientsList'
 
 
 export class Base extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ""}
+    this.state = {value: ''};
+
     this.handleChange = this.handleChange.bind(this);
   }
 
-  name(option){
-       this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
-     }
+  // name(option){
+  //      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
+  //    }
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
   }
 
 
