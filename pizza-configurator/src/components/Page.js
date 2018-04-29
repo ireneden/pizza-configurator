@@ -5,12 +5,12 @@ import Sauce from '../containers/Sauce'
 import Toppings from '../containers/Toppings'
 import TurboDrone from '../containers/TurboDrone'
 import PriceCalculator from '../containers/PriceCalculator'
-import {newChoice} from '../actions/choice'
+import {newChoiceBase} from '../actions/baseChoice'
 import '../App.css'
 
 
 class Page extends Component {
-    newChoice = (choice) => {
+    newChoiceBase = (choice) => {
     this.props.newChoice(choice)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -39,7 +39,7 @@ class Page extends Component {
               <Toppings className="Toppings2" />
               <Toppings className="Toppings3" />
               <PriceCalculator />
-              <TurboDrone className="Turbodrone" onSubmit={this.newChoice} />
+              <TurboDrone className="Turbodrone" onSubmit={this.newChoiceBase} />
               <p className="Turbodrone-p">Your Final Price is: (price including 10% turbodrone)</p>
               </form>
             </div>
@@ -55,4 +55,4 @@ const mapStateToProps = function (state) {
 	}
 }
 
-export default connect(mapStateToProps, {newChoice})(Page)
+export default connect(mapStateToProps, {newChoiceBase})(Page)

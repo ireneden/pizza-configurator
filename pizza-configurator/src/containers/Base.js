@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
 import {newPrice} from '../actions/price'
-import {newChoice} from '../actions/choice'
+import {newChoiceBase} from '../actions/baseChoice'
 
 
 export class Base extends React.Component {
@@ -16,21 +16,14 @@ export class Base extends React.Component {
   }
 
   handleChange(event) {
-    this.props.newChoice(event.target.value)
+    this.props.newChoiceBase(event.target.value)
     const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
     const ingredientPrice = ingredient[0].price
     this.props.newPrice(ingredientPrice)
-
-
-//this.props.newPrice(ingredient[0].price)
-}
+  }
 
   findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
-}
-
-
-
-
+  }
 
   render() {
     return (
@@ -44,7 +37,7 @@ export class Base extends React.Component {
             <option value="20cm NY Style">20cm NY Style € 6,45</option>
           </select>
         </label>
-        <p>total:{this.props.currentPrice}</p>
+        <p>total:{this.props.newChoiceBase}</p>
       </div>
     );
   }
@@ -54,8 +47,8 @@ export class Base extends React.Component {
 const mapStateToProps = (reduxState) => {
   return {
     prices: reduxState.prices,
-    value: reduxState.name
+    name: reduxState.name
   }
 }
 
-export default connect(mapStateToProps, {newPrice, newChoice})(Base)
+export default connect(mapStateToProps, {newPrice, newChoiceBase})(Base)

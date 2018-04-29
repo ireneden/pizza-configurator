@@ -1,32 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
+import { ingredientsOptions }  from '../ingredientsList'
+import {newPrice} from '../actions/price'
+import {newChoiceToppings} from '../actions/toppingsChoice'
 
 
 export class Toppings extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''}
+    this.state = {value: '', price: ''}
 
     this.handleChange = this.handleChange.bind(this);
-  }
+    this.findIngredient = this.findIngredient.bind(this);}
 
-  name(option){
-       this.props.dispatch({type:"NEW_CHOICE", payload: this.state})
-     }
+    handleChange(event) {
+      this.props.newChoiceToppings(event.target.value)
+      const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
+      const ingredientPrice = ingredient[0].price
+      this.props.newPrice(ingredientPrice)
+    }
 
-     handleChange(event) {
-       this.setState({value: event.target.value});
-       this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
-     }
-
+    findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
+    }
 
   render() {
     return (
       <div>
         <label>
           Select your topping:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select onChange={this.handleChange}>
             <option value="Pineapple">Pineapple</option>
             <option value="Corn">Corn</option>
             <option value="Olives">Olives (green)</option>
@@ -48,4 +51,4 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Toppings)
+export default connect(mapStateToProps, {newPrice, newChoiceToppings})(Toppings)

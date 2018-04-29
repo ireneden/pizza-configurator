@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-// import Base from './Base.js'
 import '../App.css'
 
 
