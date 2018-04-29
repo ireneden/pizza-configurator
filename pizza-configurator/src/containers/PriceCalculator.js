@@ -11,27 +11,25 @@ export class PriceCalculator extends PureComponent {
     this.calculateTotalPrice = this.calculateTotalPrice.bind(this);
     }
 
-    calculatePrice(ingredient, ingredientObject) {
-      console.log(ingredient)
-      const filteredObject = ingredientObject.filter(element =>{return element.name === ingredient[0]})
-      console.log(filteredObject)
-      if(filteredObject.length >0){
-        const ingredientPrice = filteredObject[0].price
-        return ingredientPrice
-      } else {
-        return null
-      }
+  calculatePrice(ingredient, ingredientObject) {
+    const filteredObject = ingredientObject.filter(element =>{return element.name === ingredient[0]})
+    if(filteredObject.length >0){
+      const ingredientPrice = filteredObject[0].price
+      return ingredientPrice
+    } else {
+      return null
     }
+  }
 
-    calculateTotalPrice(base,sauce,toppingone,toppingtwo,toppingthree){
-      const baseprice = this.calculatePrice(base, ingredientsOptions)
-      const sauceprice = this.calculatePrice(sauce, ingredientsOptions)
-      const toppingOnePrice = this.calculatePrice(toppingone, ingredientsOptions)
-      const toppingTwoPrice = this.calculatePrice(toppingtwo, ingredientsOptions)
-      const toppingThreePrice = this.calculatePrice(toppingthree, ingredientsOptions)
+  calculateTotalPrice(base,sauce,toppingone,toppingtwo,toppingthree){
+    const baseprice = this.calculatePrice(base, ingredientsOptions)
+    const sauceprice = this.calculatePrice(sauce, ingredientsOptions)
+    const toppingOnePrice = this.calculatePrice(toppingone, ingredientsOptions)
+    const toppingTwoPrice = this.calculatePrice(toppingtwo, ingredientsOptions)
+    const toppingThreePrice = this.calculatePrice(toppingthree, ingredientsOptions)
 
-      return baseprice+sauceprice+toppingOnePrice+toppingTwoPrice+toppingThreePrice
-    }
+    return baseprice+sauceprice+toppingOnePrice+toppingTwoPrice+toppingThreePrice
+  }
 
   render() {
     return (
@@ -44,13 +42,13 @@ export class PriceCalculator extends PureComponent {
 }
 
 function mapStateToProps(state) {
-    return {
-        pizzaBase: state.pizzaBase,
-        pizzaSauce: state.pizzaSauce,
-        pizzaTopping1: state.pizzaTopping1,
-        pizzaTopping2: state.pizzaTopping2,
-        pizzaTopping3: state.pizzaTopping3,
-    }
+  return {
+      pizzaBase: state.pizzaBase,
+      pizzaSauce: state.pizzaSauce,
+      pizzaTopping1: state.pizzaTopping1,
+      pizzaTopping2: state.pizzaTopping2,
+      pizzaTopping3: state.pizzaTopping3,
+  }
 }
 
 export default connect(mapStateToProps)(PriceCalculator)

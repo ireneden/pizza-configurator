@@ -14,15 +14,15 @@ export class Toppings1 extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.findIngredient = this.findIngredient.bind(this);}
 
-    handleChange(event) {
-      this.props.newChoiceToppings1(event.target.value)
-      const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
-      const ingredientPrice = ingredient[0].price
-      this.props.newPrice(ingredientPrice)
-    }
+  handleChange(event) {
+    this.props.newChoiceToppings1(event.target.value)
+    const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
+    const ingredientPrice = ingredient[0].price
+    this.props.newPrice(ingredientPrice)
+  }
 
-    findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
-    }
+  findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
+  }
 
   render() {
     return (

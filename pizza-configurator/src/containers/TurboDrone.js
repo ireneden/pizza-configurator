@@ -8,14 +8,11 @@ export class TurboDrone extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value:true};
-
     this.handleInputChange = this.handleInputChange.bind(this);
-
   }
 
   handleInputChange(event) {
-    
-    }
+  }
 
 
   render() {
@@ -25,16 +22,19 @@ export class TurboDrone extends React.Component {
           <b>Superhangry?</b> Have your pizza delivered turboquickly with our drone!
             <option value="TurboDrone" className="turbodrone-label">Add Turbo Drone delivery</option>
         </label>
-        <Toggle
-          defaultChecked={this.state.value} value="TurboDrone" onChange={this.handleInputChange}/>
+        <Toggle defaultChecked={this.state.value} value="TurboDrone" onChange={this.handleInputChange}/>
       </div>
     );
   }
 }
 
-const mapStateToProps = (reduxState) => {
+function mapStateToProps(state) {
   return {
-    price: reduxState.price,
+    pizzaBase: state.pizzaBase,
+    pizzaSauce: state.pizzaSauce,
+    pizzaTopping1: state.pizzaTopping1,
+    pizzaTopping2: state.pizzaTopping2,
+    pizzaTopping3: state.pizzaTopping3,
   }
 }
 
