@@ -45,7 +45,7 @@ export class Sauce extends React.Component {
 
 const mapStateToProps = (reduxState) => {
   return {
-    prices: reduxState.prices,
+    price: reduxState.price,
     name: reduxState.name
   }
 }

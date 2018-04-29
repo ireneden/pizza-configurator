@@ -38,7 +38,6 @@ export class TurboDrone extends React.Component {
 const mapStateToProps = (reduxState) => {
   return {
     price: reduxState.price,
-    name: reduxState.name
   }
 }
 

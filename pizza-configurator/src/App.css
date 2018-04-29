@@ -8,7 +8,7 @@
 .App-page {
   background-color: #fff;
   background:rgba(255,255,255,0.60);
-  padding-top: 0.5%;
+  padding-top: 1%;
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 10px;
@@ -27,7 +27,7 @@
 }
 
 form {
-  margin-top: 1%;
+  margin-top: 2%;
   font-family: Trebuchet, Arial, sans-serif;
 }
 
@@ -68,10 +68,10 @@ form select {
   font-weight: bold;
 }
 
-.submitButton {
+/* .submitButton {
   margin-top: 30px;
   margin-bottom: 0px;
-}
+} */
 
 .turbodrone-label {
 font-size: 18px;

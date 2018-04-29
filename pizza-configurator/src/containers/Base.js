@@ -20,6 +20,7 @@ export class Base extends React.Component {
     const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
     const ingredientPrice = ingredient[0].price
     this.props.newPrice(ingredientPrice)
+    console.log(newPrice(ingredientPrice))
   }
 
   findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
@@ -37,16 +38,16 @@ export class Base extends React.Component {
             <option value="20cm NY Style">20cm NY Style € 6,45</option>
           </select>
         </label>
-        <p>total:{this.ingredientPrice}</p>
       </div>
     );
   }
 }
 
+export
 
 const mapStateToProps = (reduxState) => {
   return {
-    prices: reduxState.prices,
+    price: reduxState.price,
     name: reduxState.name
   }
 }

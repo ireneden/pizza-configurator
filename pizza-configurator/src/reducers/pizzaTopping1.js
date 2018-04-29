@@ -5,7 +5,7 @@ let initialState=[];
 export default (state = initialState, { type, payload } = {}) => {
     switch(type) {
       case NEW_CHOICE_TOPPINGS1:
-      return state.concat(payload)
+      return initialState.concat(payload)
     default:
       return state
     }}

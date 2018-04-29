@@ -4,6 +4,5 @@ body {
   font-family: sans-serif;
   text-align: center;
   background: url("./images/pizza.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
