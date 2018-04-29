@@ -23,14 +23,14 @@ export class TurboDrone extends React.Component {
 
   render() {
     return (
-      <form>
+      <div>
         <label>
           <b>Superhangry?</b> Have your pizza delivered turboquickly with our drone!
             <option value="TurboDrone" className="turbodrone-label">Add Turbo Drone delivery</option>
         </label>
         <Toggle
           defaultChecked={this.state.value} value="TurboDrone" onChange={this.handleInputChange}/>
-      </form>
+      </div>
     );
   }
 }

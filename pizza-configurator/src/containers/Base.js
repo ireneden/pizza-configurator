@@ -3,31 +3,37 @@ import { connect } from 'react-redux'
 import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
 
+// let allPrices = [];
 
 
 export class Base extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {value: '', price: ''}
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({value: event.target.value, price: this.props.price});
     this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
-
-    let foundIngredient = false;
     for(var i = 0; i < ingredientsOptions.length; i++) {
         if (ingredientsOptions[i].name === event.target.value) {
-            foundIngredient = true;
-            return alert(ingredientsOptions[i].price)
-            break;
+            let prices = ingredientsOptions[i].price
+            // let pricesNumbers = parseFloat(ingredientsOptions[i].price)
+            console.log(prices)
+            // allPrices.push(prices)
+            // console.log(allPrices)
+            // let newPrice = allPrices.reduce((a, b) => a + b, 0)
+            // console.log(newPrice)
+            // return newPrice
         }
-    }}
+    }
+  }
 
   render() {
     return (
+      <div>
         <label>
           First of all, pick your base:
           <select value={this.state.value} onChange={this.handleChange}>
@@ -37,6 +43,8 @@ export class Base extends React.Component {
             <option value="20cm NY Style">20cm NY Style € 6,45</option>
           </select>
         </label>
+        <p>total:{this.handleChange.prices}</p>
+      </div>
     );
   }
 }

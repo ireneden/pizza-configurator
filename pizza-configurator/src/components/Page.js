@@ -31,14 +31,13 @@ class Page extends Component {
         <div className="App-page">
           <h1 className="App-title">Welcome to the pizza configurator!</h1>
             <div className = "Pizza-configurator">
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <Base className="Base" />
               <Sauce className="Sauce" />
               <h4>Now select up to 3 toppings!</h4>
               <Toppings className="Toppings1" />
               <Toppings className="Toppings2" />
               <Toppings className="Toppings3" />
-              <input type="submit" value="Submit" className="submitButton"/>
               <PriceCalculator />
               <TurboDrone className="Turbodrone" onSubmit={this.newChoice} />
               <p className="Turbodrone-p">Your Final Price is: (price including 10% turbodrone)</p>
