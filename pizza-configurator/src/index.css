@@ -5,4 +5,5 @@ body {
   text-align: center;
   background: url("./images/pizza.jpg");
   background-size: cover;
+  background-repeat: repeat;
 }

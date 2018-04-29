@@ -8,7 +8,8 @@
 .App-page {
   background-color: #fff;
   background:rgba(255,255,255,0.60);
-  padding-top: 1%;
+  padding-top: 2%;
+  padding-bottom: 1%;
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 10px;
@@ -33,6 +34,11 @@ form {
 
 form label {
   font-size: 19px;
+}
+
+form select {
+padding: 3px 20px;
+margin-top: 10px;
 }
 
 form input  {
@@ -74,7 +80,10 @@ form select {
 } */
 
 .turbodrone-label {
-font-size: 18px;
+font-size: 15px;
+font-weight: 600;
+margin-top: 10px;
+margin-bottom: 7px;
 }
 
 .react-toggle {

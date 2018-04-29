@@ -30,8 +30,7 @@ class Page extends Component {
               <Toppings2 className="Toppings2" />
               <Toppings3 className="Toppings3" />
               <PriceCalculator />
-              <TurboDrone className="Turbodrone" onSubmit={this.newChoiceBase} />
-              <p className="Turbodrone-p">Your Final Price is: (price including 10% turbodrone)</p>
+              <TurboDrone onSubmit={this.newChoiceBase} />
               </form>
             </div>
         </div>

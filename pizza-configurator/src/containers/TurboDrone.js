@@ -14,10 +14,7 @@ export class TurboDrone extends React.Component {
   }
 
   handleInputChange(event) {
-    // const target = event.target;
-    // const togglevalue = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({value: event.target.value});
-    this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
+    
     }
 
 

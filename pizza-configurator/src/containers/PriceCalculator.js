@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
-import {newPrice} from '../actions/price'
 import { ingredientsOptions } from '../ingredientsList'
 
 
@@ -38,7 +37,7 @@ export class PriceCalculator extends PureComponent {
     return (
       <div className="PriceCalculator">
         <h3>Total price (excluding delivery options): </h3>
-        <h2>{this.calculateTotalPrice(this.props.pizzaBase, this.props.pizzaSauce, this.props.pizzaTopping1, this.props.pizzaTopping2, this.props.pizzaTopping3)}</h2>
+        <h2 id="TotalIngredientsPrice">{this.calculateTotalPrice(this.props.pizzaBase, this.props.pizzaSauce, this.props.pizzaTopping1, this.props.pizzaTopping2, this.props.pizzaTopping3)}</h2>
       </div>
     )
   }
@@ -55,4 +54,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(PriceCalculator)
-// export default connect(mapStateToProps, {newPrice, newChoiceSauce})(Sauce)
