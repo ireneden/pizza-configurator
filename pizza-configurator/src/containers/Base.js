@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
-
-// let allPrices = [];
+import {newPrice} from '../actions/price'
+import {newChoice} from '../actions/choice'
 
 
 export class Base extends React.Component {
@@ -12,38 +12,39 @@ export class Base extends React.Component {
     this.state = {value: '', price: ''}
 
     this.handleChange = this.handleChange.bind(this);
+    this.findIngredient = this.findIngredient.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value, price: this.props.price});
-    this.props.dispatch({type:"NEW_CHOICE", payload: event.target.value})
-    for(var i = 0; i < ingredientsOptions.length; i++) {
-        if (ingredientsOptions[i].name === event.target.value) {
-            let prices = ingredientsOptions[i].price
-            // let pricesNumbers = parseFloat(ingredientsOptions[i].price)
-            console.log(prices)
-            // allPrices.push(prices)
-            // console.log(allPrices)
-            // let newPrice = allPrices.reduce((a, b) => a + b, 0)
-            // console.log(newPrice)
-            // return newPrice
-        }
-    }
-  }
+    this.props.newChoice(event.target.value)
+    const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
+    const ingredientPrice = ingredient[0].price
+    this.props.newPrice(ingredientPrice)
+
+
+//this.props.newPrice(ingredient[0].price)
+}
+
+  findIngredient(ingredient) {ingredientsOptions.filter(element =>{return element.name === ingredient})
+}
+
+
+
+
 
   render() {
     return (
       <div>
         <label>
           First of all, pick your base:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select onChange={this.handleChange}>
             <option value="25cm NY Style">25cm NY Style € 8,99</option>
             <option value="30cm NY Style">30cm NY Style € 11,49</option>
             <option value="35cm NY Style">35cm NY Style € 13,49</option>
             <option value="20cm NY Style">20cm NY Style € 6,45</option>
           </select>
         </label>
-        <p>total:{this.handleChange.prices}</p>
+        <p>total:{this.props.currentPrice}</p>
       </div>
     );
   }
@@ -52,9 +53,9 @@ export class Base extends React.Component {
 
 const mapStateToProps = (reduxState) => {
   return {
-    price: reduxState.price,
-    name: reduxState.name
+    prices: reduxState.prices,
+    value: reduxState.name
   }
 }
 
-export default connect(mapStateToProps)(Base)
+export default connect(mapStateToProps, {newPrice, newChoice})(Base)
