@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
 import {newPrice} from '../actions/price'
-import {newChoiceToppings1} from '../actions/toppingsChoice1'
+import {newChoiceToppings3} from '../actions/toppingsChoice3'
 
 
-export class Toppings1 extends React.Component {
+export class Toppings3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: '', price: ''}
@@ -15,7 +15,7 @@ export class Toppings1 extends React.Component {
     this.findIngredient = this.findIngredient.bind(this);}
 
     handleChange(event) {
-      this.props.newChoiceToppings1(event.target.value)
+      this.props.newChoiceToppings3(event.target.value)
       const ingredient = ingredientsOptions.filter(element =>{return element.name === event.target.value})
       const ingredientPrice = ingredient[0].price
       this.props.newPrice(ingredientPrice)
@@ -28,7 +28,7 @@ export class Toppings1 extends React.Component {
     return (
       <div>
         <label>
-          Select your first topping:
+          Select your third topping:
           <select onChange={this.handleChange}>
             <option value="Pineapple">Pineapple</option>
             <option value="Corn">Corn</option>
@@ -51,4 +51,4 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps, {newPrice, newChoiceToppings1})(Toppings1)
+export default connect(mapStateToProps, {newPrice, newChoiceToppings3})(Toppings3)

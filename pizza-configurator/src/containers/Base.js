@@ -37,7 +37,7 @@ export class Base extends React.Component {
             <option value="20cm NY Style">20cm NY Style € 6,45</option>
           </select>
         </label>
-        <p>total:{this.props.newChoiceBase}</p>
+        <p>total:{this.ingredientPrice}</p>
       </div>
     );
   }

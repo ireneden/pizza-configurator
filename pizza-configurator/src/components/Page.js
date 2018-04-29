@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import Base from '../containers/Base'
 import Sauce from '../containers/Sauce'
 import Toppings from '../containers/Toppings'
+import Toppings2 from '../containers/Toppings2'
+import Toppings3 from '../containers/Toppings3'
 import TurboDrone from '../containers/TurboDrone'
 import PriceCalculator from '../containers/PriceCalculator'
 import {newChoiceBase} from '../actions/baseChoice'
@@ -15,17 +17,6 @@ class Page extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
- // name(option){
- //      this.props.dispatch({type:"NEW_CHOICE", payload: this.state.value})
- //    }
-
-    // handleSubmit(event) {
-    //        event.preventDefault()
-    //        this.value(this.props.value)
-    //        event.preventDefault();
-    //      }
-
-
   render() {
     return (
         <div className="App-page">
@@ -34,10 +25,10 @@ class Page extends Component {
             <form>
               <Base className="Base" />
               <Sauce className="Sauce" />
-              <h4>Now select up to 3 toppings!</h4>
+              <h3>Now select up to 3 toppings!</h3>
               <Toppings className="Toppings1" />
-              <Toppings className="Toppings2" />
-              <Toppings className="Toppings3" />
+              <Toppings2 className="Toppings2" />
+              <Toppings3 className="Toppings3" />
               <PriceCalculator />
               <TurboDrone className="Turbodrone" onSubmit={this.newChoiceBase} />
               <p className="Turbodrone-p">Your Final Price is: (price including 10% turbodrone)</p>
