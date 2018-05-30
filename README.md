@@ -1,3 +1,5 @@
+This app is made with React - Redux 
+
 ## Quickstart:
 1. clone this repo
 2. cd into /client
