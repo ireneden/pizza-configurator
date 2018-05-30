@@ -38,3 +38,9 @@ If any base is picked there should always be a price shown for the total pizza.
 The redux store should contain the state of the pizza
 There is no backend connection needed
 This app uses controlled form components as they are the best practise
+
+### To do:
+- Add material-ui next
+- Refactor code
+
+
