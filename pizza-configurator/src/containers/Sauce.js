@@ -4,6 +4,9 @@ import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
 import {newPrice} from '../actions/price'
 import {newChoiceSauce} from '../actions/sauceChoice'
+import Select from '@material-ui/core/Select';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 export class Sauce extends React.Component {
@@ -28,15 +31,16 @@ export class Sauce extends React.Component {
   render() {
     return (
       <div>
-        <label>
-          Then choose your favourite sauce:
-          <select onChange={this.handleChange}>
-            <option value="WhiteSauce">White sauce</option>
-            <option value="RedSauce">Red sauce</option>
-            <option value="DoubleRedSauce">Double red sauce € 1,00</option>
-            <option value="Mix">Mix it up € 1,50</option>
-          </select>
-        </label>
+        Then select the sauce:
+        <Select
+            onChange={this.handleChange}
+          >
+
+            <MenuItem value="WhiteSauce">White sauce</MenuItem>
+            <MenuItem value="RedSauce">Red sauce</MenuItem>
+            <MenuItem value="DoubleRedSauce">Double red sauce € 1,00</MenuItem>
+            <MenuItem value="Mix">Mix it up € 1,50</MenuItem>
+          </Select>
       </div>
     );
   }

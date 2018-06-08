@@ -4,6 +4,9 @@ import '../App.css'
 import { ingredientsOptions }  from '../ingredientsList'
 import {newPrice} from '../actions/price'
 import {newChoiceToppings3} from '../actions/toppingsChoice3'
+import Select from '@material-ui/core/Select';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 export class Toppings3 extends React.Component {
@@ -27,18 +30,19 @@ export class Toppings3 extends React.Component {
   render() {
     return (
       <div>
-        <label>
           Select your third topping:
-          <select onChange={this.handleChange}>
-            <option value="Pineapple">Pineapple</option>
-            <option value="Corn">Corn</option>
-            <option value="Olives">Olives (green)</option>
-            <option value="RedOnions">Red onions</option>
-            <option value="Spinach">Spinach</option>
-            <option value="CherryTomatoes">Cherry tomatoes</option>
-            <option value="Chicken">Chicken</option>
-          </select>
-        </label>
+          <Select
+            onChange={this.handleChange}
+          >            
+
+            <MenuItem value="Pineapple">Pineapple</MenuItem>
+            <MenuItem value="Corn">Corn</MenuItem>
+            <MenuItem value="Olives">Olives (green)</MenuItem>
+            <MenuItem value="RedOnions">Red onions</MenuItem>
+            <MenuItem value="Spinach">Spinach</MenuItem>
+            <MenuItem value="CherryTomatoes">Cherry tomatoes</MenuItem>
+            <MenuItem value="Chicken">Chicken</MenuItem>
+          </Select>
       </div>
     );
   }
