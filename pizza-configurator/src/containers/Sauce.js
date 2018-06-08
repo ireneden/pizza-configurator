@@ -36,7 +36,7 @@ export class Sauce extends React.Component {
             onChange={this.handleChange}
           >
 
-           <MenuItem value="WhiteSauce">White sauce</MenuItem>
+            <MenuItem value="WhiteSauce">White sauce</MenuItem>
             <MenuItem value="RedSauce">Red sauce</MenuItem>
             <MenuItem value="DoubleRedSauce">Double red sauce € 1,00</MenuItem>
             <MenuItem value="Mix">Mix it up € 1,50</MenuItem>
